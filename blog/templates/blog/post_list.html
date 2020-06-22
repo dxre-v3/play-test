@@ -32,6 +32,19 @@ h3{
   padding-right:13px;
 }
 
+.post{
+    background-color:#d2c6b2; 
+    border: solid 3px #442727;
+    margin: 10px;
+}
+a{
+    text-decoration: inherit;
+    color: inherit;
+}
+.post > a {
+    
+    color:#442727;
+}
 img{
   width:25%;
   float:left;
@@ -111,7 +124,14 @@ h2{
       
           <p>People who do not write will tell you that they haven't gotten around to it yet beause they know they can do it. They just need to get the kids in school, hire a lawn service and spend weekends writing, re-cycle their notebooks into usable material, make a concerted effort to remember their dreams. It can be done tomorrow. Any time. ... They are not writing because they can. You are writing because you can't - Ann Beattie. <i>Letters to a Fiction Writer</i></p>
         </div>
-        
+
+        {% for post in posts %}
+        <div class="post">
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href=""></a>{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
       <div>
         <h2><span id = "person">Terry Pratchett Quotes</span>  <span id = "button"> Change</span></h2>
         <section id = "quotes">
