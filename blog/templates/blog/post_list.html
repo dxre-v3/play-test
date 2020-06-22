@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <title>Acquired Author Quotes</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Raleway|Abril+Fatface&display=swap');
+
+body{
+  font-family: Raleway;
+  margin:0px;
+  color: #442727;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Abril Fatface;
+  font-weight: normal;
+  margin:0px;
+  padding:0px;
+}
+
+h1{
+  padding: 15px;
+  font-size: 35px;
+  background-color: #442727;
+  text-align: center;
+  color: #eae7d9;
+}
+
+h3{
+  padding: 3px;
+  background-color: #d2c6b2;
+  text-align: right;
+  padding-right:13px;
+}
+
+img{
+  width:25%;
+  float:left;
+  position: relative;
+  background: #eae7d9;
+  padding: 5px;
+  border: solid 2px #442727;
+  margin: 2%
+  
+}
+
+#intro{
+  padding:8px;
+  font-size: 18px; 
+  display:block;
+}
+i{
+  font-family: Abril Fatface; 
+}
+
+h2{
+  position:relative;
+  display:block;
+  padding:10px;
+}
+article{
+  display: flex;
+  flex-wrap: wrap;
+}
+article > div{
+  width:100%;
+}
+
+h2{
+  background: #d2c6b2;
+  text-indent: 5%;
+}
+
+#quotes{
+  display:flex;
+  flex-wrap:wrap;
+}
+#quotes > p{
+  width: 27%;
+  padding:1.5%;
+  margin:1%;
+  color:#eae7d9;
+  border-radius:10px;
+  background: #442727;
+  border: 2px solid #937d14;
+}
+
+
+#button{
+/*   border: solid 1px brown; */
+ margin-left: 35%;
+  padding: 5px;
+}
+
+#button:hover{
+  color: #eae7d9;
+  background:rgba(147, 125, 20, .5);
+  border-radius: 10px;
+}
+
+        </style>
+    </head>
+    <body>
+    <nav>
+        <h1>My Favorite Author Quotes</h1>
+        <h3>By Avriana Allen </h3>
+        
+      </nav>
+      <article>
+      <div id = "intro">
+        <img src="https://images.pexels.com/photos/34592/pexels-photo.jpg?auto=compress" alt="">
+      
+          <p>People who do not write will tell you that they haven't gotten around to it yet beause they know they can do it. They just need to get the kids in school, hire a lawn service and spend weekends writing, re-cycle their notebooks into usable material, make a concerted effort to remember their dreams. It can be done tomorrow. Any time. ... They are not writing because they can. You are writing because you can't - Ann Beattie. <i>Letters to a Fiction Writer</i></p>
+        </div>
+        
+      <div>
+        <h2><span id = "person">Terry Pratchett Quotes</span>  <span id = "button"> Change</span></h2>
+        <section id = "quotes">
+        <p>A good bookshop is just a genteel Black Hole that knows how to read.</p>
+        <p>I'll be more enthusiastic about encouraging thinking outside the box when there's evidence of any thinking going on inside it.</p>
+        <p>Real stupidity beats artificial intelligence every time.</p>
+        <p>It's not worth doing something unless someone, somewhere, would much rather you weren't doing it.</p>
+        <p>
+      “There are times in life when people must know when not to let go. Balloons are designed to teach small children this.”</p>
+        <p>Fantasy is an exercise bicycle for the mind. It might not take you anywhere, but it tones up the muscles that can. Of course, I could be wrong. </p>
+      </section>
+        </div>
+      </article>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script>
+          pratchett = [
+  "A good bookshop is just a genteel Black Hole that knows how to read.",
+  "I'll be more enthusiastic about encouraging thinking outside the box when there's evidence of any thinking going on inside it.",
+  "Real stupidity beats artificial intelligence every time.",
+  "It's not worth doing something unless someone, somewhere, would much rather you weren't doing it.",
+  "There are times in life when people must know when not to let go. Balloons are designed to teach small children this.",
+  "Fantasy is an exercise bicycle for the mind. It might not take you anywhere, but it tones up the muscles that can. Of course, I could be wrong."
+]
+gaiman = [
+"I hope that in this year to come, you make mistakes. Because if you are making mistakes...you're Doing Something.",
+  "What I say is, a town isn’t a town without a bookstore. It may call itself a town, but unless it’s got a bookstore, it knows it’s not foolin’ a soul.", 
+  "People think dreams aren't real just because they aren't made of matter, of particles. Dreams are real. But they are made of viewpoints, of images, of memories and puns and lost hopes.",
+  "Stories may well be lies, but they are good lies that say true things, and which can sometimes pay the rent.", 
+  "Being a writer is a very peculiar sort of a job: it's always you versus a blank sheet of paper (or a blank screen) and quite often the blank piece of paper wins.",
+  "Picking five favorite books is like picking the five body parts you'd most like not to lose."]
+
+adams = [
+  "I may not have gone where I intended to go, but I think I have ended up where I needed to be.",
+  "A learning experience is one of those things that says, 'You know that thing you just did? Don't do that.'",
+  "A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.",
+  "Nothing travels faster than the speed of light, with the possible exception of bad news, which obeys its own special laws.",
+  "There are some people you like immediately, some whom you think you might learn to like in the fullness of time, and some that you simply want to push away from you with a sharp stick.",
+  "He attacked everything in life with a mix of extraordinary genius and naive incompetence, and it was often difficult to tell which was which."
+  
+]
+
+names = ["Terry Pratchett", "Neil Gaiman", "Douglas Adams"]
+
+quotes = [
+  pratchett, 
+  gaiman,
+  adams
+]
+
+var whichName = 0;
+
+$('#button').on('pointerdown', function(){
+  if(whichName < 2){
+    whichName ++;
+  }else{
+    whichName = 0;
+  }
+  var name = names[whichName];
+  $('#person').text(`${name} Quotes`);
+ 
+  $('#quotes').html('');
+  $.each(quotes[whichName], function(index, value){
+$("#quotes").append(`<p>${value}</p>`);
+  })
+  
+  
+  
+})
+
+      </script>
+
+    </body>
+</html>
